@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Votacion electronica</title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./estiloTabla.css" />
+    <!-- Google icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card card-body bg-dark rounded-0 mb-4">
+          <h1>
+            <span class="material-icons"> grid_view </span>
+              Votacion Electronica
+          </h1>
+          <div class="d-flex align-items-center">
+            <span class="material-icons"> account_balance_wallet </span>
+            <span class="ms-2">Wallet</span>
+          </div>
+          <span id="account"></span>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div id="">
+
+          <button id="candidato1" value="1">Votar por Candidato 1</button>
+          <button id="candidato2" value="2">Votar por Candidato 2</button>
+          <button id="candidato3" value="3">Votar por Candidato 3</button>
+          <button id="candidato4" value="4">Votar por Candidato 4</button>
+          <button id="candidato5" value="5">Votar por Candidato 5</button>
+          <button id="candidato6" value="6">Votar por Candidato 6</button>
+        
+          <h2>Resultados de Votación</h2>
+          <button onclick="obtenerResultados()">Obtener Resultados</button>
+          <div id="resultados"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="/libs/@truffle/contract/browser-dist/truffle-contract.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./uiVotacion.js"></script>
+
+</body>
+</html>
+
