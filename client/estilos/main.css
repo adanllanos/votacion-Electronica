@@ -1,0 +1,22 @@
+body {
+  background: #0A192F;
+  color: #fff;
+}
+.contenedor-foto{
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+
+}
+.contenedor-foto:hover{
+  background-color: #e6e6e6 ;
+}
+.contenedor-foto {
+  margin: 15px;
+}
+
+.contenedor-candidatos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}

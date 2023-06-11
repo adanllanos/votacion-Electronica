@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Votacion electronica</title>
     <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./main.css" />
-    <link rel="stylesheet" href="./estiloTabla.css" />
+    <link rel="stylesheet" href="./estilos/main.css" />
+    <link rel="stylesheet" href="./estilos/estiloTabla.css" />
     <!-- Google icons -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -17,7 +17,7 @@
 <body>
   <div class="container py-5">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-12">
         <div class="card card-body bg-dark rounded-0 mb-4">
           <h1>
             <span class="material-icons"> grid_view </span>
@@ -30,29 +30,93 @@
           <span id="account"></span>
         </div>
       </div>
-      <div class="col-md-8">
-        <div id="">
-
-          <button id="candidato1" value="1">Votar por Candidato 1</button>
-          <button id="candidato2" value="2">Votar por Candidato 2</button>
-          <button id="candidato3" value="3">Votar por Candidato 3</button>
-          <button id="candidato4" value="4">Votar por Candidato 4</button>
-          <button id="candidato5" value="5">Votar por Candidato 5</button>
-          <button id="candidato6" value="6">Votar por Candidato 6</button>
-        
-          <h2>Resultados de Votación</h2>
-          <button onclick="obtenerResultados()">Obtener Resultados</button>
-          <div id="resultados"></div>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="contenedor-candidatos">
+          <div class="contenedor-foto">
+              <div style="max-height: 100%;">
+                  <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="150px" height="150px" alt="" />
+              </div>
+            <div >
+              <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 1</h6>
+            </div>
+            <div class="contenedor_botones">
+              <button id="candidato1" value="1">Votar</button>
+            </div>
+          </div>
+          <div class="contenedor-foto">
+              <div style="max-height: 100%;">
+                  <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="150px" height="150px" alt="" />
+              </div>
+            <div>
+              <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 2</h6>
+            </div>
+            <div class="contenedor_botones">
+              <button id="candidato2" value="2">Votar</button>
+            </div>
+          </div>
+          <div class="contenedor-foto">
+              <div style="max-height: 100%;">
+                  <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="150px" height="150px" alt="" />
+              </div>
+            <div>
+              <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 3</h6>
+            </div>
+            <div class="contenedor_botones">
+              <button id="candidato3" value="3">Votar</button>
+            </div>
+          </div>
+          <div class="contenedor-foto">
+            <div style="max-height: 100%;">
+                <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="150px" height="150px" alt="" />
+            </div>
+          <div>
+            <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 4</h6>
+          </div>
+          <div class="contenedor_botones">
+            <button id="candidato4" value="4">Votar</button>
+          </div>
         </div>
+        <div class="contenedor-foto">
+            <div style="max-height: 100%;">
+                <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="150px" height="150px" alt="" />
+            </div>
+          <div>
+            <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 5</h6>
+          </div>
+          <div class="contenedor_botones">
+            <button id="candidato5" value="5">Votar</button>
+          </div>
+        </div>
+        <div class="contenedor-foto">
+            <div style="max-height: 100%;">
+                <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="150px" height="150px" alt="" />
+            </div>
+          <div>
+            <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 6</h6>
+          </div>
+          <div class="contenedor_botones">
+            <button id="candidato6" value="6">Votar</button>
+          </div>
+        </div>
+        </div>
+        <h2>Resultados de Votación</h2>
+        <button onclick="obtenerResultados()">Obtener Resultados</button>
+        <div id="resultados"></div>
+    
       </div>
+          
+    </div>
     </div>
   </div>
 
   
 
   <script src="/libs/@truffle/contract/browser-dist/truffle-contract.min.js"></script>
-  <script src="./script.js"></script>
-  <script src="./uiVotacion.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/uiVotacion.js"></script>
 
 </body>
 </html>
