@@ -1,0 +1,124 @@
+
+body {
+    background-color: #eee;
+}
+
+.left {
+    max-width: 50vw;
+    border: 1px solid #000;
+    padding: 20px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+select {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid #243757;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+}
+
+#titulo {
+    font-weight: bold;
+}
+
+.dato .serie {
+    width: 50%;
+    margin-right: 15px;
+}
+
+.dato .valor {
+    width: 20%;
+}
+.dato .cantidad {
+    margin-right: 15px;
+    width: 10%;
+}
+
+.agregar {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-color: #243757;
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.crear-grafico {
+    float: right;
+    background-color: #314755;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.right {
+    float: left;
+    border: 1px solid #000;
+    max-width: 50vw;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.modal-header {
+    padding: 0.5rem 0.5rem;
+}
+.cant {
+    width: 100px;
+}
+.laptop {
+    width: 100px;
+}
+.total {
+    width: 100px;
+}
+body {
+    background-color: white;
+}
+.fechas{
+    margin: 10px;
+}
+form{
+    display: flex;  
+    justify-content: center;
+    align-items: center; 
+}
+.btn{
+    width: 150px;
+    height: 30px;
+    border: 2px solid ;
+    margin-top: 10px;
+}
+.span{
+    margin: 5px;
+    font-size: 25px;
+    color: #000000;
+}
+.aceptar{
+    width: 150px;
+    height: 40px;
+    margin-left: 50px;
+    color: #fff;
+    background-color: #314755;
+    margin-top: 10px;
+}
+input{
+    padding-top: 10px;
+}

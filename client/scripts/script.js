@@ -75,7 +75,7 @@ App = {
           const votos = resultado.toNumber();
           const candidatoNombre = await App.votacionContrato.candidatos(i);
       
-          contenidoTabla += `<tr><td>${candidatoNombre.nombre}</td><td>${votos}</td></tr>`;
+          contenidoTabla += `<tr><td class = "serie">${candidatoNombre.nombre}</td><td class = "valor">${votos}</td></tr>`;
         }
       
         tabla.innerHTML += contenidoTabla;
