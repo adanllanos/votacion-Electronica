@@ -3,10 +3,12 @@
     "baseDir": [
       "./client",
       "./build/contracts"
+      
     ],
     "routes": {
       "/libs": "./node_modules"
-    }
+    },
+    "index": "./client/login.html"
   },
   "port": "3001"
 }
