@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Votacion electronica segunda vuelta</title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./estilos/main2vuelta.css" />
+    <!-- Google icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-body bg-dark rounded-0 mb-4">
+          <h1>
+            <span class="material-icons"> grid_view </span>
+              Votacion Electronica segunda vuelta
+          </h1>
+          <div class="d-flex align-items-center">
+            <div>
+          <button class="bg-dark"><a href="http://localhost:3001/reporte.html" style="color: white;">Reporte</a></button>
+            </div>
+            <span class="material-icons"> account_balance_wallet </span>
+            <span class="ms-2">Wallet</span>
+          </div>
+          <span id="account"></span>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="contenedor-candidatos">
+          <div class="contenedor-foto">
+              <div style="max-height: 100%;">
+                  <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="300px" height="300px" alt="" />
+              </div>
+            <div >
+              <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 1</h6>
+            </div>
+            <div class="contenedor_botones">
+              <button id="candidato1" value="1">Votar</button>
+            </div>
+          </div>
+          <div class="contenedor-foto">
+              <div style="max-height: 100%;">
+                  <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="300px" height="300px" alt="" />
+              </div>
+            <div>
+              <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 2</h6>
+            </div>
+            <div class="contenedor_botones">
+              <button id="candidato2" value="2">Votar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+    </div>
+    </div>
+  </div>
+
+  
+
+  <script src="/libs/@truffle/contract/browser-dist/truffle-contract.min.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/uiVotacion.js"></script>
+  <script src="./scripts/reporte.js"></script>
+
+</body>
+</html>
+
