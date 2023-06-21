@@ -34,12 +34,12 @@ App = {
           console.error(error);
         }
       },
-      RealizarVoto: async (candicato) =>{
-        const res = await App.votacionContrato.realizarVoto(candicato, {
+      RealizarVoto: async (candidato, segundaVuelta) => {
+        const res = await App.votacionContrato.realizarVoto(candidato, segundaVuelta, {
             from: App.account
         });
-        console.log(res.logs[0].args)
-      },
+        console.log(res.logs[0].args);
+    },
       loadAccount: async () => {
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
@@ -49,7 +49,7 @@ App = {
       render: async () => {
         document.getElementById("account").innerText = App.account;
       },
-      renderResultados: async () => {
+      renderResultados: async ( segundaVuelta) => {
         const resultadosDiv = document.getElementById("resultados");
         const tabla = document.createElement("table");
         const thead = document.createElement("thead");
@@ -70,12 +70,22 @@ App = {
       
         let contenidoTabla = "";
       
-        for (let i = 0; i <= 5; i++) {
-          const resultado = await App.votacionContrato.obtenerResultado(i);
-          const votos = resultado.toNumber();
-          const candidatoNombre = await App.votacionContrato.candidatos(i);
-      
-          contenidoTabla += `<tr><td class = "serie">${candidatoNombre.nombre}</td><td class = "valor">${votos}</td></tr>`;
+        if(segundaVuelta == false){
+          for (let i = 0; i <= 5; i++) {
+            const resultado = await App.votacionContrato.obtenerResultado(i, segundaVuelta);
+            const votos = resultado.toNumber();
+            const candidatoNombre = await App.votacionContrato.candidatos(i);
+        
+            contenidoTabla += `<tr><td class = "serie">${candidatoNombre.nombre}</td><td class = "valor">${votos}</td></tr>`;
+          }
+        }else{
+          for (let i = 0; i <= 1; i++) {
+            const resultado = await App.votacionContrato.obtenerResultado(i, segundaVuelta);
+            const votos = resultado.toNumber();
+            const candidatoNombre = await App.votacionContrato.candidatos(i);
+        
+            contenidoTabla += `<tr><td class = "serie">${candidatoNombre.nombre}</td><td class = "valor">${votos}</td></tr>`;
+          }
         }
       
         tabla.innerHTML += contenidoTabla;
@@ -83,9 +93,9 @@ App = {
         resultadosDiv.innerHTML = "";
         resultadosDiv.appendChild(tabla);
       },
-      
-      
-      
-      
-
+      IniciarSegundaVuelta: async (candidatosegundavuelta1, candidatosegundavuelta2) => {
+        const res = await App.votacionContrato.iniciarSegundaVuelta(candidatosegundavuelta1, candidatosegundavuelta2, {
+            from: App.account
+        });
+    },
   }

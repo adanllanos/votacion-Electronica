@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Votacion electronica</title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./estilos/main.css" />
+    <link rel="stylesheet" href="./estilos/estiloTabla.css" />
+    <!-- Google icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-body bg-dark rounded-0 mb-4">
+          <h1>
+            <span class="material-icons"> grid_view </span>
+              Reporte de la votacio segunda vuelta
+          </h1>
+          <div class="d-flex align-items-center">
+            <span class="material-icons"> account_balance_wallet </span>
+            <span class="ms-2">Wallet</span>
+          </div>
+          <span id="account"></span>
+        </div>
+      </div>
+      
+      
+    </div>
+    <h2>Resultados de Votación</h2>
+      <button onclick="obtenerResultadosSegundaVuelta()">Obtener Resultados</button>
+      
+
+      <div class="left">
+        <select name="" id="tipo">
+            <option value="circular">
+                Gráfico Circular
+            </option>
+            <option value="columna">
+                Gráfico de Columnas
+            </option>
+        </select>
+        <input type="text" placeholder="Reporte de votos" id="titulo" readonly style="display: none;">
+            <div class="datos" id="datos">
+              <div id="resultados"></div>
+            </div>
+            <button onclick="cargarGrafico()" class="crear-grafico">Crear Gráfico</button>
+    </div>
+    <div class="right">
+        <div id="piechart"></div>
+    </div>
+</div>
+
+
+    </div>
+  </div>
+
+  
+  
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="/libs/@truffle/contract/browser-dist/truffle-contract.min.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/uiVotacion.js"></script>
+  <script src="./scripts/reporte.js"></script>
+
+</body>
+</html>

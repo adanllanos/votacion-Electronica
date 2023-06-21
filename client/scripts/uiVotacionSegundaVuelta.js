@@ -17,7 +17,7 @@ const botonesVotacion = [
     boton.addEventListener("click", (e) => {
       e.preventDefault();
       const valor = boton.value;
-      App.RealizarVoto(valor-1, false);
+      App.RealizarVoto(valor-1, true);
       votar(valor-1);
     });
   });

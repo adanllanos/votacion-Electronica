@@ -98,12 +98,20 @@ function drawChart() {
     if (cumpleCondicionSegundaVuelta) {
         primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
         segundoCandidatoSegundaVuelta = resultadosOrdenados[1][0];
-        console.log("No habra segunda vuelta");
+        //console.log("No habra segunda vuelta");
         alert('El nuevo presidente es: '+ resultadosOrdenados[0][0])
     } else {
         primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
         segundoCandidatoSegundaVuelta = resultadosOrdenados[1][0];
-        console.log("Habra segunda vuelta y los candidatos son: " + primerCandidatoSegundaVuelta + " y "+ segundoCandidatoSegundaVuelta);
-
+        alert("Habra segunda vuelta y los candidatos son: " + primerCandidatoSegundaVuelta + " y "+ segundoCandidatoSegundaVuelta);
+        iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta, segundoCandidatoSegundaVuelta);
     }
+}
+
+
+function iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta2, segundoCandidatoSegundaVuelta2){
+    console.log('llego a este punto')
+    App.IniciarSegundaVuelta(primerCandidatoSegundaVuelta2, segundoCandidatoSegundaVuelta2);
+    window.location.href = "http://localhost:3001/votacionSegundaVuelta.html";
+
 }
