@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro para votacion electronica</title>
+    <script type="module" src="./scripts/firebaseConect.js"></script>
+    <script type="module" src="./scripts/registro.js"></script>
+    <link rel="stylesheet" href="./estilos/estilologin.css" />
+</head>
+<body>
+    <body class="fondo" style="background-image: url('./imagenes/bloom.jpg');">
+    
+        <div id="contenedor">
+            <div id="central">
+                <div id="login">
+                    <div class="icono"  >
+                        <img src="./imagenes/computadora.png"/>
+                    </div>
+                    <div class="titulo">
+                        Registro de usuario
+                    </div>
+                    <form id="formulario-crear">
+
+                        <label for="fname">Nombre(s):</label>
+                        <input type="text" id="fname" name="fname"><br><br>
+                        
+                        <label for="lname">Apellidos:</label>
+                        <input type="text" id="lname" name="lname"><br><br>
+
+                        <label for="ci">Carnet de identidad:</label>
+                        <input type="number" id="ci" name="ci"><br><br>
+                        
+                        <label for="phone">Telefonos:</label>
+                        <input type="number" id="phone" name="phone"><br><br>
+
+                        <label for="address">Dirección:</label>
+                        <input type="text" id="address" name="address"><br><br>
+                        
+                        <label>Datos para el inico de Sesión</label><br><br>
+
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                        
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password"><br><br>
+                        
+                        <input type="submit"  value="Registrarse">
+                      </form>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+  <script src="./scripts/login.js"></script>
+
+</body>
+</html>

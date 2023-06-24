@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Votacion electronica</title>
+    <script type="module" src="./scripts/firebaseConect.js"></script>
+    <script type="module" src="./scripts/login.js"></script>
     <link rel="stylesheet" href="./estilos/estilologin.css" />
 </head>
 <body>
@@ -19,13 +21,11 @@
                     <div class="titulo">
                         Votacion Electronica
                     </div>
-                    <form id="loginform" method="POST">
+                    <form id="formulario-sesion" method="POST">
                         <div>
-                                <input type="text" name="username" placeholder="Usuario" required>
-                            
-                            <input type="password" placeholder="Contraseña" name="password" required>
-                            
-                            <button type="submit" title="Ingresar" name="Ingresar" onclick="login()">INICIAR SESION</button>
+                            <input type="text" name="username" placeholder="Email" id="email" required>
+                            <input type="password" placeholder="Contraseña" name="password" id="password" required>
+                            <button type="submit" title="Ingresar" name="Ingresar" id="btn-login">INICIAR SESION</button>
                         </div>
                     </form>
                     

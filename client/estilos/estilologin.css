@@ -4,7 +4,8 @@
     background-repeat:no-repeat;
     background-color: #020b1a;
     background-attachment:local;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 } 
 #contenedor {
     display: flex;
