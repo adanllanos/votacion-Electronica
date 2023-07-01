@@ -107,30 +107,39 @@ function drawChart() {
     var segundoCandidatoRes = resultadosOrdenados[1][1];
     var diferenciaPorcentaje = primerCandidatoRes - segundoCandidatoRes;
     var cumpleCondicionSegundaVuelta = (primerCandidatoRes >= 40 && diferenciaPorcentaje >= 10);
-
-    if (estadoSegundaVuelta){
-        primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
-        //console.log("No habra segunda vuelta");
-        setTimeout(function() {
-            alert('El nuevo presidente es: ' + resultadosOrdenados[0][0]);
-        }, 0);
-    }else{
-        if (cumpleCondicionSegundaVuelta) {
+    if (document.getElementById("tipo-votacion").value == "Segunda Vuelta"){
+        if (estadoSegundaVuelta){
             primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
             //console.log("No habra segunda vuelta");
             setTimeout(function() {
                 alert('El nuevo presidente es: ' + resultadosOrdenados[0][0]);
             }, 0);
-        } else {
-            primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
-            segundoCandidatoSegundaVuelta = resultadosOrdenados[1][0];
-            setTimeout(function() {
-                alert("Habra segunda vuelta y los candidatos son: " + primerCandidatoSegundaVuelta + " y "+ segundoCandidatoSegundaVuelta);
-                iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta, segundoCandidatoSegundaVuelta);
-            }, 0);
-            
+        }else{
+            if (cumpleCondicionSegundaVuelta) {
+                primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
+                //console.log("No habra segunda vuelta");
+                setTimeout(function() {
+                    alert('El nuevo presidente es: ' + resultadosOrdenados[0][0]);
+                }, 0);
+            } else {
+                primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
+                segundoCandidatoSegundaVuelta = resultadosOrdenados[1][0];
+                setTimeout(function() {
+                    alert("Habra segunda vuelta y los candidatos son: " + primerCandidatoSegundaVuelta + " y "+ segundoCandidatoSegundaVuelta);
+                    iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta, segundoCandidatoSegundaVuelta);
+                }, 0);
+                
+            }
         }
+    }else{
+        primerCandidatoSegundaVuelta = resultadosOrdenados[0][0];
+            setTimeout(function() {
+                alert('El nuevo presidente es: ' + resultadosOrdenados[0][0]);
+            }, 0);
     }
+
+    
+    
 
 }
 
