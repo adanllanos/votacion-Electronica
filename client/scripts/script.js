@@ -21,6 +21,7 @@ App = {
           );
         }
       },
+
       loadContract: async () => {
         try {
           const res = await fetch("VotacionContrato.json");
@@ -49,6 +50,7 @@ App = {
       render: async () => {
         document.getElementById("account").innerText = App.account;
       },
+      
       renderResultados: async ( segundaVuelta) => {
         const resultadosDiv = document.getElementById("resultados");
         const tabla = document.createElement("table");
