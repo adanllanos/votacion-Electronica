@@ -126,8 +126,10 @@ function drawChart() {
                 segundoCandidatoSegundaVuelta = resultadosOrdenados[1][0];
                 setTimeout(function() {
                     alert("Habra segunda vuelta y los candidatos son: " + primerCandidatoSegundaVuelta + " y "+ segundoCandidatoSegundaVuelta);
-                    iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta, segundoCandidatoSegundaVuelta);
-                }, 0);
+                    setTimeout(function(){
+                        iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta, segundoCandidatoSegundaVuelta);
+                    },5000);
+                }, 5000);
                 
             }
         }
@@ -145,8 +147,12 @@ function drawChart() {
 
 
 function iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta2, segundoCandidatoSegundaVuelta2){
-    console.log('llego a este punto')
+    console.log('llego a este punto', primerCandidatoSegundaVuelta2);
+    console.log('llego a este punto', segundoCandidatoSegundaVuelta2);
     App.IniciarSegundaVuelta(primerCandidatoSegundaVuelta2, segundoCandidatoSegundaVuelta2);
-    window.location.href = "http://localhost:3001/votacionSegundaVuelta.html";
+    setTimeout(function() {
+        window.location.href = `http://localhost:3001/votacionSegundaVuelta.html?cand1=${primerCandidatoSegundaVuelta2}&cand2=${segundoCandidatoSegundaVuelta2}`;
+
+    }, 5000);
 
 }

@@ -46,7 +46,7 @@
                   <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="300px" height="300px" alt="" />
               </div>
             <div >
-              <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 1</h6>
+              <h6 class="descripcion-candidato1" style="font-size: 18px;width: 100%;color: black;" ></h6>
             </div>
             <div class="contenedor_botones">
               <button id="candidato1" value="1">Votar</button>
@@ -57,7 +57,7 @@
                   <img src="./imagenes/candidato.png" style="max-height: 100%;width: auto;" width="300px" height="300px" alt="" />
               </div>
             <div>
-              <h6 class="descripcion" style="font-size: 18px;width: 100%;color: black;">candidato 2</h6>
+              <h6 class="descripcion-candidato2" style="font-size: 18px;width: 100%;color: black;"></h6>
             </div>
             <div class="contenedor_botones">
               <button id="candidato2" value="2">Votar</button>
@@ -76,7 +76,23 @@
   <script src="./scripts/script.js"></script>
   <script src="./scripts/uiVotacionSegundaVuelta.js"></script>
   <script src="./scripts/reporte.js"></script>
+<script type="text/javascript">
+  function name() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const cand1 = urlParams.get('cand1');
+    const cand2 = urlParams.get('cand2');
 
+    var cand1Element1 = document.querySelector('.descripcion-candidato1');
+    var cand1Element2 = document.querySelector('.descripcion-candidato2');
+
+    console.log('guido, 1', cand1);
+    console.log('guido, 2', cand2);
+
+    cand1Element1.innerHTML = cand1;
+    cand1Element2.innerHTML = cand2;
+  }
+  name();
+</script>
 </body>
 </html>
 

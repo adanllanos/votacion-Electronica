@@ -41,15 +41,12 @@ contract VotacionContrato {
         } else {
             candidatos[candidato].votos++;
         }
-
         votantes[msg.sender] = true;
-
         emit VotoRealizado(msg.sender, candidato, segundaVuelta);
     }
 
     function obtenerResultado(uint256 candidato, bool segundaVuelta) public view returns (uint256) {
         require(candidato < 6, "El candidato no existe.");
-
         if (segundaVuelta) {
             require(candidato == 0 || candidato == 1, "Solo se permite obtener el resultado de los candidatos de la segunda vuelta.");
             if (candidato == 0) {
