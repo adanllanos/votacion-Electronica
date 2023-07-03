@@ -1,4 +1,3 @@
-import { ManageAccount } from './firebaseConect.js';
 
 //Variable que guarda la cantidad de leyendas a insertar en el gráfico
 let cantidadLeyendas;
@@ -9,31 +8,6 @@ var tieneDatosValidos = false;
 var primerCandidatoSegundaVuelta;
 var segundoCandidatoSegundaVuelta;
 var estadoSegundaVuelta = false;
-
-const account = new ManageAccount();
-account.ValidarInicioSesion();
-
-//Funcion para cerra sesion Firebase
-document.getElementById("salir").addEventListener("click", () => {
-    signOutWithoutAuthState();
-});
-
-
-document.getElementById("segunda-vuelta").addEventListener("click", () => {
-    account.reinicioSegundaVulelta();
-});
-
-
-  /*auth.onAuthStateChanged(function(user) {});*/
-
-async function signOutWithoutAuthState() {
-    try {
-      await account.signOut();
-    } 
-    catch (error) {
-      console.log("Error al desconectar al usuario:", error);
-    }
-  }
 
 //Función que cargar el gràfico de Google
 function cargarGrafico() {

@@ -24,11 +24,11 @@ const botonesVotacion = [
     });
   });
 
-  function obtenerResultados() {
-    App.renderResultados(false);
-  }
+}
+function obtenerResultados() {
+  App.renderResultados(false);
+}
 
-  function obtenerResultadosSegundaVuelta(){
-    App.renderResultados(true);
-  }
+function obtenerResultadosSegundaVuelta(){
+  App.renderResultados(true);
 }
