@@ -14,19 +14,35 @@ document.getElementById("formulario-crear").addEventListener("submit", (event) =
     const ci = document.getElementById("ci").value;
     const phone = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
+    const birthdate = document.getElementById("birthdate").value;
+    const voto = false;
 
     async function createUserAndObtainUID() {
-        try {
-          const uid = await account.register(email, password);
-          account.registerAccount(fname, lname, ci, phone, address, uid);
-          document.getElementById("formulario-crear").reset();
-        } 
-        catch (error) {
-          console.error("Ocurrió un error:", error);
-        }
+      try {
+        const uid = await account.register(email, password);
+        const name = await account.registerAccount(fname, lname, ci, phone, address, uid, birthdate, voto);
+        document.getElementById("formulario-crear").reset();
+        console.log(name);
+        Swal.fire({
+          title: "Sistema de Votación",
+          html: 'Usuario creado correctamenete! </br>' + 
+                'Ahora sera redirigido a la cuenta de: ' + name,
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        })
+        .then(resultado => {
+          if (resultado.value) {
+            window.location.href = "votacion.html";
+          } 
+          else {
+            window.location.href = "votacion.html";
+          }
+        });
+      } 
+      catch (error) {
+        console.error("Ocurrió un error:", error);
       }
-    createUserAndObtainUID();
-    
-});
+    }
 
-console.log('Formulario de Registro');
+    createUserAndObtainUID();
+});

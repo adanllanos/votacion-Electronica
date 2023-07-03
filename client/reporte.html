@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Votacion electronica</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.12/sweetalert2.all.min.js"></script>
     <script type="module" src="./scripts/firebaseConect.js"></script>
     <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./estilos/main.css" />
@@ -31,8 +32,9 @@
           <span id="account"></span>
         </div>
         <div>
-          <a name="" id="salir" class="btn btn-outline-info" href="#" role="button">Cerrar sesion</a>
-          <a name="" id="crear-usuario" class="btn btn-outline-primary" href="#" role="button">Crear Usuario</a>
+          <a name="" id="salir" class="btn btn-outline-info" role="button">Cerrar sesion</a>
+          <a name="" id="crear-usuario" class="btn btn-outline-primary" href="registro.html"  role="button">Crear Usuario</a>
+          <a name="" id="segunda-vuelta" class="btn btn-outline-danger" href="#"  role="button">Segunda Vuelta</a>
         </div>
       </div>
       
@@ -51,14 +53,6 @@
                 Gráfico de Columnas
             </option>
         </select>
-        <select name="" id="tipo-votacion">
-          <option value="Segunda Vuelta">
-            Segunda vuelta
-          </option>
-          <option value="Mayoria simple">
-            Mayoría simple
-          </option>
-      </select>
         <input type="text" placeholder="Reporte de votos" id="titulo" readonly style="display: none;">
             <div class="datos" id="datos">
               <div id="resultados"></div>
@@ -80,7 +74,7 @@
   <script src="/libs/@truffle/contract/browser-dist/truffle-contract.min.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/uiVotacion.js"></script>
-  <script src="./scripts/reporte.js"></script>
+  <script type="module" src="./scripts/reporte.js"></script>
 
 </body>
 </html>

@@ -1,13 +1,39 @@
+import { ManageAccount } from './firebaseConect.js';
+
 //Variable que guarda la cantidad de leyendas a insertar en el gráfico
 let cantidadLeyendas;
 var arregloDatos = [];
 var arregloDatosPorcentajes = [];
+
 var tieneDatosValidos = false;
 var primerCandidatoSegundaVuelta;
 var segundoCandidatoSegundaVuelta;
 var estadoSegundaVuelta = false;
 
+const account = new ManageAccount();
+account.ValidarInicioSesion();
 
+//Funcion para cerra sesion Firebase
+document.getElementById("salir").addEventListener("click", () => {
+    signOutWithoutAuthState();
+});
+
+
+document.getElementById("segunda-vuelta").addEventListener("click", () => {
+    account.reinicioSegundaVulelta();
+});
+
+
+  /*auth.onAuthStateChanged(function(user) {});*/
+
+async function signOutWithoutAuthState() {
+    try {
+      await account.signOut();
+    } 
+    catch (error) {
+      console.log("Error al desconectar al usuario:", error);
+    }
+  }
 
 //Función que cargar el gràfico de Google
 function cargarGrafico() {
@@ -25,7 +51,6 @@ function cargarGraficoSegundaVuelta(){
     });
     google.charts.setOnLoadCallback(drawChart);
 }
-
 
 // Dibujo el gráfico y coloco los valores
 function drawChart() {
@@ -48,10 +73,9 @@ function drawChart() {
         totalVotos=totalVotos+elemento;
     }
     console.log(totalVotos);
-
+    
     var t = ['Gráfico', ''];
     arregloDatos.push(t);
-    //arregloDatosPorcentajes.push(t);
 
     for (i = 0; i < datos.length; i = i + 2) {
         //voy agregando los pares al arreglo arreglo arregloDatos.
@@ -74,7 +98,7 @@ function drawChart() {
     var options = {
         'title': document.getElementById("titulo").value,
         'width': 700,
-        'height': 500,
+        'height': 500
     };
 
     // Muestro el gráfico dentro del elemento <div>  con id="piechart"
@@ -97,7 +121,7 @@ function drawChart() {
         var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
         chart.draw(data, options);
     }
-
+    account.reinicioSegundaVulelta();
 
     /*
     será proclamada a la Presidencia y Vicepresidencia la candidatura que haya reunido el 50% más uno de los votos válidos; o que haya obtenido un mínimo del 40% de los votos válidos con una diferencia de al menos 10% en relación con la segunda candidatura.
@@ -144,8 +168,6 @@ function drawChart() {
     
 
 }
-
-
 function iniciarSegundaVueltaReporte(primerCandidatoSegundaVuelta2, segundoCandidatoSegundaVuelta2){
     console.log('llego a este punto', primerCandidatoSegundaVuelta2);
     console.log('llego a este punto', segundoCandidatoSegundaVuelta2);

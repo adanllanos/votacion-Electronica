@@ -21,7 +21,6 @@ App = {
           );
         }
       },
-
       loadContract: async () => {
         try {
           const res = await fetch("VotacionContrato.json");
@@ -40,7 +39,7 @@ App = {
             from: App.account
         });
         console.log(res.logs[0].args);
-    },
+      },
       loadAccount: async () => {
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
@@ -73,12 +72,12 @@ App = {
         let contenidoTabla = "";
       
         if(segundaVuelta == false){
-          for (let i = 0; i <= 5; i++) {
+        for (let i = 0; i <= 5; i++) {
             const resultado = await App.votacionContrato.obtenerResultado(i, segundaVuelta);
-            const votos = resultado.toNumber();
-            const candidatoNombre = await App.votacionContrato.candidatos(i);
-        
-            contenidoTabla += `<tr><td class = "serie">${candidatoNombre.nombre}</td><td class = "valor">${votos}</td></tr>`;
+          const votos = resultado.toNumber();
+          const candidatoNombre = await App.votacionContrato.candidatos(i);
+      
+          contenidoTabla += `<tr><td class = "serie">${candidatoNombre.nombre}</td><td class = "valor">${votos}</td></tr>`;
           }
         }else{
           for (let i = 0; i <= 1; i++) {

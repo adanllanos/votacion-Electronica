@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     App.init()
 })
 
+if(window.location.href == "http://localhost:3001/votacion.html"){
+
 const botonesVotacion = [
     document.getElementById("candidato1"),
     document.getElementById("candidato2"),
@@ -29,3 +31,4 @@ const botonesVotacion = [
   function obtenerResultadosSegundaVuelta(){
     App.renderResultados(true);
   }
+}
